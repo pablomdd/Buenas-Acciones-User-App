@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'UI/feed.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'F-lutter Demo Home Page'),
+//      home: MyHomePage(title: 'F-lutter Demo Home Page'),
+        home: FeedScreen(),
     );
   }
 }
