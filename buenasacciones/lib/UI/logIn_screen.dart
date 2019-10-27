@@ -1,4 +1,3 @@
-import 'package:buenasacciones/UI/Widgets/login_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -54,7 +53,16 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         padding: EdgeInsets.only(top: statusH, left: 10, right: 10),
         child: Center(
-          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            child: ListView(children: <Widget>[
+          Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+            AspectRatio(
+              aspectRatio: 1.5,
+              child: Image.asset(
+                "lib/assets/gooddeeds.jpeg",
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 10),
             TextField(
               controller: _userControl,
               decoration: InputDecoration(
@@ -135,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ]),
-        ),
+        ])),
       ),
     );
   }
@@ -144,7 +152,8 @@ class _LoginScreenState extends State<LoginScreen> {
     String username = _userControl.text;
     String password = _passwordControl.text;
 
-    if (username == 'admin@hotmail.com' && password == 'password') {
+    if (username.trim().toLowerCase() == 'admin@hotmail.com' &&
+        password == 'password') {
       Navigator.pushNamed(context, "/feed");
     } else {
       setState(() {
