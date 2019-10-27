@@ -19,6 +19,7 @@ class _FeedScreenState extends State<FeedScreen> {
         elevation: 1,
         title: Text("Buenas Acciones"),
       ),
+      body: Text("Hola Mundo"),
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _selectedIndex,
         showElevation: true, // use this to remove appBar's elevation
@@ -44,7 +45,7 @@ class _FeedScreenState extends State<FeedScreen> {
               activeColor: Colors.pink
           ),
           BottomNavyBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.person_pin),
               title: Text('Perfil'),
               activeColor: Colors.blue
           ),
